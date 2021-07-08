@@ -263,7 +263,7 @@ function apotelesma(){
         console.log("end")
     bool=false
     }
-    if (fmonth>12 || fday>parseInt(fdayw.max)) || fmonth<0 || fday<0){
+    if (fmonth>12 || fday>parseInt(fdayw.max) || fmonth<0 || fday<0){
         resultText+= " -Διορθώστε την ημερομηνία απελευθέρωσης"+"<br>"
         bool=false
     }
