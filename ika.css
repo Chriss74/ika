@@ -1,0 +1,46 @@
+
+  form{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse; 
+    display:block;
+
+  }
+  
+  
+
+    h2 {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    input, form{
+        width: 200px;
+        padding: 8px; 
+        display:block;
+        margin:10px;
+        display:flex;
+    }
+
+
+  #title{
+  margin: 8px;
+  width: 80%;
+  padding: 10px;
+  display: block;
+    }
+    #result{  
+        margin-top:20px;
+        padding: 10px; 
+        display:block;
+        max-width: 800px;   
+    }
+    .end{
+        position:absolute;
+        margin-top:20px;
+        padding:10px;
+        border: 1px solid #249728c9;
+        max-width: 800px;
+
+    }

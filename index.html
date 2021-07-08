@@ -1,0 +1,96 @@
+<!Doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8"/>
+        <title> Υπολογισμός Εργάσιμων ημερών </title>
+        <link rel="stylesheet" href="ika.css">
+        <script src="ika.js"></script>
+</head>
+<body> 
+    <div id="title">
+        <h2 > Υπολογισμός Εργάσιμων Ημερών για υπαλλήλους του ιδιωτικού τομέα </h2> </div>
+       
+        <div id="data>"
+                <p>Αρχή Περιόδου</p>
+                <form onchange="correctMonthStart()">
+                    <input type="number" title="Ημέρα Έναρξης" value="1", step="1" min=1 max=31 id="startd" />   
+                    <input type="number" title="Μήνας Έναρξης" value="1", step="1" min=1 max=12 id="startm" /> 
+                    <input type="number" title="'Ετος Έναρξης" step="1" min=2000 value="2010", max=2021 id="starty"/> 
+                </form> 
+                <p>Τέλος Περιόδου</p>
+                <form onchange="correctMonthEnd()">  
+                    <input type="number" title="Ημέρα Λήξης" value="1", step="1" min=1 max=31 id="endd" />   
+                    <input type="number" title="Μήνας Λήξης" value="1", step="1" min=1 max=12 id="endm" /> 
+                    <input type="number" title="'Ετος Λήξης" step="1" min=2000 value="2010", max=2021 id="endy"/> 
+                     
+                </form> 
+                <p>Λοιπές δημόσιες αργίες (απελευθέρωση πόλης και πολιούχος άγιος πόλης). Αφήστε το 0 εάν δεν ενδιαφέρεστε να συνυπολογιστούν.</p>
+                <form onchange="correctMonthFree()">  
+                    <input type="number" title="Ημερα Απελευθέρωσης" value="0", step="1" min=1 max=31 id="freed" />   
+                    <input type="number" title="Μήνας Απελευθέρωσης" value="0", step="1" min=1 max=12 id="freem" /> 
+                     
+                </form> 
+
+                <form onchange="correctMonthSaint()">  
+                    <input type="number" title="Ημερα Πολιούχου" value="0", step="1" min=1 max=31 id="saintd" />   
+                    <input type="number" title="Μήνας Πολιούχου" value="0", step="1" min=1 max=12 id="saintm" />       
+                </form>
+
+                <button onclick="apotelesma()">Αποτέλεσμα</button>
+    </div>
+    <div id="result"></div>
+                <!-- <form>
+                      <label for="check" title="τσεκάρετε αν θέλετε να κρατήσετε ίδια τα p,q,e,d">Keep values</label>
+                      <input type="checkbox" id="check" title="τσεκάρετε αν θέλετε να κρατήσετε ίδια τα p,q,e,d">
+                      
+                  </form>
+     
+        
+         
+                    <form>
+                    <input type="button" id="Submit" value="Εμφάνιση" onclick="mySubmit()"/>
+                    <input type="button" id="Clear"  value="Καθαρισμός" onclick="Clean()"/>
+                </form> 
+               
+            
+                <br>
+               
+                 <table  id="solutionList" >
+                 <tr>
+                     <th title="ένας πρώτος αριθμός">p</th>
+                     <th title="ένας πρώτος αριθμός διαφορετικός από τον p">q</th>
+                     <th title="το γινόμενο p*q">n</th>
+                     <th title="το γινόμενο (p-1)*(q-1)">f</th>
+                     <th title="ένας περιττός αριθμός που δεν διαιρεί ακριβώς τον f">e</th>
+                     <th title="το κλειδί αποκρυπτογράφησης e*d=(x*f)+1">d</th>
+                 </tr>
+                 <tr>
+                    <td id="p"></td>
+                    <td id="q"></td>
+                    <td id="n"></td>
+                    <td id="f"></td>
+                    <td id="e"></td>
+                    <td id="d"></td>
+                  </tr>
+                </table>
+
+                  <table id="messagelist" >
+                  <tr>
+                      <th title="c=m^e mod n" class="msglist">κρυπτοκείμενο</th>
+                      <th title="m=c^d mod n" class="msglist">αποκρυπτογράφηση</th>
+                </tr>
+                <tr>
+                    <td id="encrypt" class="msglist"></th>
+                    <td id="decrypt" class="msglist"></th>
+                </tr>
+                </table> -->
+          
+          
+<div class=end> 
+    Πρόκειται για μια πολύ πρόχειρη πειραματική εφαρμογή για εκπαιδευτικούς λόγους που υπολογίζει τις εργάσιμες ημέρες για εργαζόμενους στον ιδιωτικό τομέα και για τη χρονική περίοδο που θα ορίσθει ο χρήστης εντός της χρονικής περιόδου από 1-1-2000 εως 31-12-2021. Υπολογίζει τα δίσεκτα έτη, αφαιρεί τα σ/κ, τις σταθερές επίσημες αργίες (Χριστούγεννα, 26 Δεκεμβρίου, Πρωτοχρονιά,  Θεοφάνεια, 25η Μαρτίου, Πρωτομαγιά, 15 Αγούστου, 28η Οκτωβρίου), καθώς και τις κινητές επίσημες αργίες Καθαρά Δευτέρα και Μεγάλη Παρασκευή (οι υπόλοιπες κινητές αργίες είναι ούτως ή άλλως Κυριακή). Επίσης, είναι δυνατόν να οριστεί για κάθε πόλη η ημέρα απελευθέρωσης και του πολιούχου Αγίου που είναι επίσης επίσημες αργίες. </div>
+<div class="left"></div>
+
+</div>
+        </body>
+        </html>
+        
