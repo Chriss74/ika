@@ -166,7 +166,7 @@ eday.setAttribute("max", end)
 
 function correctMonthFree(){
 let fday=document.getElementById("freed")
-fday=parseInt(fday)
+
 let fmonth=document.getElementById("freem").value
 fmonth=parseInt(fmonth)
     if (fmonth==2){
