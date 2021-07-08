@@ -166,7 +166,6 @@ eday.setAttribute("max", end)
 
 function correctMonthFree(){
 let fday=document.getElementById("freed")
-
 let fmonth=document.getElementById("freem").value
 fmonth=parseInt(fmonth)
     if (fmonth==2){
@@ -180,7 +179,6 @@ fmonth=parseInt(fmonth)
 
 function correctMonthSaint(){
         let sday=document.getElementById("saintd")
-        sday=parseInt(sday)
         let smonth=document.getElementById("saintm").value
         smonth=parseInt(smonth)
             if (smonth==2){
