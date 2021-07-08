@@ -199,8 +199,10 @@ function apotelesma(){
    
     let fmonth=document.getElementById("freem").value
     let fday=document.getElementById("freed").value
+    let fdayw=document.getElementById("freed")
     let saintmonth=document.getElementById("saintm").value
     let saintday=document.getElementById("saintd").value
+     let saintdayw=document.getElementById("saintd")
     liberation=fmonth+fday
     citySaint=saintmonth+saintday
     fmonth=parseInt(fmonth)
@@ -261,7 +263,7 @@ function apotelesma(){
         console.log("end")
     bool=false
     }
-    if (fmonth>12 || fday>parseInt(document.getElementById(freed.max)) || fmonth<0 || fday<0){
+    if (fmonth>12 || fday>parseInt(document.getElementById(fdayw.max)) || fmonth<0 || fday<0){
         resultText+= " -Διορθώστε την ημερομηνία απελευθέρωσης"+"<br>"
         bool=false
     }
@@ -274,7 +276,7 @@ function apotelesma(){
         bool=false  
     }
 
-    if (saintmonth>12 || saintday>parseInt(document.getElementById(saintd.max)) || saintmonth<0 || saintday<0){
+    if (saintmonth>12 || saintday>parseInt(document.getElementById(saintdayw.max)) || saintmonth<0 || saintday<0){
         resultText+= " -Διορθώστε την ημερομηνία Πολιούχου Αγίου"+"<br>"
         bool=false
     }
