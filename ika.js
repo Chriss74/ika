@@ -260,8 +260,7 @@ function apotelesma(){
     }
     if (eday<1 || eday>parseInt(eMaxMonth)){
         resultText+= " -Μή αποδεκτές ημέρες για τον "+emonth+"ο του έτους "+syear+ ". Max ημερες= "+parseInt(eMaxMonth)+"<br>"
-        console.log("end")
-    bool=false
+        bool=false
     }
     if (fmonth>12 || fday>parseInt(fdayw.max) || fmonth<0 || fday<0){
         resultText+= " -Διορθώστε την ημερομηνία απελευθέρωσης"+"<br>"
